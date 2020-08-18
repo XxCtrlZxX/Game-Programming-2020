@@ -48,6 +48,10 @@ public:
 	void setRotation(float rotation);
 	void setRotationCenter(D3DXVECTOR2 rotationCenter);
 
+	// Camera
+	void CameraMove(D3DXVECTOR2 vec);
+	void CameraMove(float dx, float dy);
+
 	template<typename PX, typename PY>
 	void setPos(PX posX, PY posY) {
 		pos.x = posX;

@@ -20,7 +20,6 @@ public :
 	void Update(float dTime);
 
 	void PlayerJump(D3DXVECTOR2 jVec, float power);
-	void PlayerJump(float dx, float dy);
 
 	D3DXVECTOR2 getPosCenter();
 };

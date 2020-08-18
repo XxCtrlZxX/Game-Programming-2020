@@ -126,3 +126,13 @@ void Object::setScalingCenter(D3DXVECTOR2 scaleCenter) {
 	scalingCenter.x = scaleCenter.x;
 	scalingCenter.y = scaleCenter.y;
 }
+
+void Object::CameraMove(D3DXVECTOR2 vec) {
+	for (auto& child : childList) {
+		child->setPos(child->getPos() + vec);
+	}
+}
+
+void Object::CameraMove(float dx, float dy) {
+
+}

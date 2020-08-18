@@ -37,19 +37,11 @@ void Player::Update(float dTime) {
 		Vgravity = 0;
 		Hgravity = 0;
 	}
-
-	if (isPlayerAnim)
-		playerAnimation->Update(dTime);
 }
 
 void Player::PlayerJump(D3DXVECTOR2 jVec, float power) {
 	Hgravity = jVec.x * power;
 	Vgravity = jVec.y * power;
-}
-
-void Player::PlayerJump(float dx, float dy) {
-	Hgravity = dx;
-	Vgravity = dy;
 }
 
 D3DXVECTOR2 Player::getPosCenter() {

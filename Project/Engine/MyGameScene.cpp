@@ -7,6 +7,8 @@ MyGameScene::MyGameScene() {
 	isLBtnDown = false;
 	isLBtnUp = false;
 
+	mainCamera = new Camera();
+
 	//-------------------------------------------//
 	player = new Player();
 	player->setPos(SCREEN_WIDTH / 2 - 50, 100);
@@ -49,10 +51,12 @@ void MyGameScene::Render() {
 void MyGameScene::Update(float dTime) {
 	Scene::Update(dTime);
 
+	mainCamera->CameraMove(10, 0);
+
 	CollisionCheck();
 
 	if (inputManager->GetKeyState(VK_SPACE) == KEY_DOWN) {
-		player->isPlayerAnim = player->isPlayerAnim ? false : true;
+		
 	}
 
 	if (jumpCount < 2) {
@@ -87,9 +91,8 @@ void MyGameScene::MouseManage() {
 	if (isLBtnDown) {
 		//std::cout << "ÁÂÅ¬¸¯ Áß" << std::endl;
 
-		currentMousPos = inputManager->GetMousePos();
-
-		arrowVector = currentMousPos - firstMousePos;
+		currentMousePos = inputManager->GetMousePos();
+		arrowVector = currentMousePos - firstMousePos;
 
 		if (VecDistance(arrowVector) < 200)
 			arrowLen = VecDistance(arrowVector);
@@ -110,6 +113,14 @@ void MyGameScene::MouseManage() {
 		player->PlayerJump(arrowVector / VecDistance(arrowVector) * 3, arrowLen);
 		jumpCount++;
 	}
+}
+
+void MyGameScene::CameraMove(D3DXVECTOR2 vec) {
+	CameraMove(vec.x, vec.y);
+}
+
+void MyGameScene::CameraMove(float dx, float dy) {
+
 }
 
 float MyGameScene::VecDistance(D3DXVECTOR2 vec) {
