@@ -3,7 +3,7 @@
 //프로그램 세팅
 #define CONSOLE_ON true
 #define SCREEN_WIDTH 768
-#define SCREEN_HEIGHT 1024
+#define SCREEN_HEIGHT 768
 #define BG_COLOR D3DCOLOR_ARGB(255,255,255,255)
 #define PROGRAM_NAME TEXT("Engine")
 #define CONSOLE_NAME TEXT("Console")
@@ -45,6 +45,7 @@
 #define RUNNING_SPEED 500
 
 #define PI 3.141592653589793238
+#define debug(s) {std::cout << s << std::endl;}
 
 //전역 변수
 extern LPDIRECT3D9 pd3d;
@@ -56,3 +57,4 @@ extern SceneManager* sceneManager;
 extern TextureManager* textureManager;
 extern InputManager* inputManager;
 extern SoundManager* soundManager;
+extern float globalTime;

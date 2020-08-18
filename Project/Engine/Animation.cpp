@@ -27,6 +27,14 @@ void Animation::Render() {
 	}
 }
 
+void Animation::Render(int tmp) {
+	Object::Render();
+	if (maxFrame > 0) {
+		spriteVector[tmp]->setColor(color);
+		spriteVector[tmp]->Render();
+	}
+}
+
 void Animation::Update(float dTime) {
 	timeChecker += dTime;
 

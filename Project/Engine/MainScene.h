@@ -1,7 +1,6 @@
 #pragma once
 #include "Scene.h"
 #include "Sprite.h"
-#include "GameScene.h"
 
 #include "MyGameScene.h"
 

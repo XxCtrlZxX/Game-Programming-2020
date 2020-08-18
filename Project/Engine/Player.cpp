@@ -2,11 +2,12 @@
 #include "Player.h"
 
 Player::Player() {
-	isJump = false;
-	doubleJump = false;
-	gravity = 9.8;
+	isPlayerAnim = false;
+	isGround = false;
+	Vgravity = 0;
+	Hgravity = 0;
 
-	playerAnimation = new Animation(5);
+	playerAnimation = new Animation(3);
 	playerAnimation->AddFrame("Resources/Image/player-stop.png");
 	playerAnimation->AddFrame("Resources/Image/player-run.png");
 	AddChild(playerAnimation);
@@ -20,37 +21,35 @@ Player::~Player() {
 
 void Player::Render() {
 	Object::Render();
-	playerAnimation->Render();
+	if (isGround)
+		playerAnimation->Render(0);
+	else
+		playerAnimation->Render(1);
 }
 
 void Player::Update(float dTime) {
-	gravity += 9.8f;
 
-	setPos(getPosX(), getPosY() + gravity * dTime);
-
-	if (isJump) {
-		setPos(getPosX(), getPosY() - 300 * dTime);
-		if (doubleJump) {
-			setPos(getPosX(), getPosY() - 300 * dTime);
-		}
-		if (inputManager->GetKeyState(VK_UP) == KEY_DOWN) {
-			doubleJump = true;
-		}
+	if (!isGround) {
+		Vgravity += 9.8f;
+		setPos(getPosX() + Hgravity * dTime * globalTime, getPosY() + Vgravity * dTime * globalTime);
 	}
-	if (getPosY() > 350) {
-		setPos(getPosX(), 350);
-		doubleJump = false;
-		isJump = false;
+	else {
+		Vgravity = 0;
+		Hgravity = 0;
 	}
 
-	if (inputManager->GetKeyState(VK_UP) == KEY_DOWN) {
-		if (getPosY() == 350) {
-			isJump = true;
-			gravity = 0;
-		}
-	}
 	if (isPlayerAnim)
 		playerAnimation->Update(dTime);
+}
+
+void Player::PlayerJump(D3DXVECTOR2 jVec, float power) {
+	Hgravity = jVec.x * power;
+	Vgravity = jVec.y * power;
+}
+
+void Player::PlayerJump(float dx, float dy) {
+	Hgravity = dx;
+	Vgravity = dy;
 }
 
 D3DXVECTOR2 Player::getPosCenter() {

@@ -6,19 +6,21 @@ class Player : public Object
 {
 private :
 	Animation* playerAnimation;
-	float gravity;
-	bool doubleJump, isJump;
+	float Vgravity, Hgravity;
 
 	D3DXVECTOR2 center;
 
 public :
-	bool isPlayerAnim;
+	bool isPlayerAnim, isGround;
 
 	Player();
 	~Player();
 
 	void Render();
 	void Update(float dTime);
+
+	void PlayerJump(D3DXVECTOR2 jVec, float power);
+	void PlayerJump(float dx, float dy);
 
 	D3DXVECTOR2 getPosCenter();
 };

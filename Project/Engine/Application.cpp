@@ -12,6 +12,8 @@ TextureManager* textureManager;
 InputManager* inputManager;
 SoundManager* soundManager;
 
+float globalTime;
+
 Application::Application() {
 	QueryPerformanceCounter(&beforeInterval);
 	QueryPerformanceCounter(&currentInterval);
@@ -62,6 +64,7 @@ void Application::InitManager() {
 	textureManager = new TextureManager();
 	inputManager = new InputManager();
 	soundManager = new SoundManager();
+	globalTime = 1;
 }
 
 void Application::InitDeltaTime() {

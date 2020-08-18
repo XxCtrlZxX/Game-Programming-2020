@@ -1,14 +1,20 @@
 #pragma once
+
 #include "Object.h"
 #include "Sprite.h"
 
-class Bridge : public Object
+class Wall : public Object
 {
 private:
-	Sprite* bridge;
+	Sprite* wall;
+
 public:
-	Bridge();
-	~Bridge();
+	Wall(const char* path);
+	~Wall();
+
 	void Update(float dTime);
 	void Render();
+
+	Sprite* getSprite();
 };
+

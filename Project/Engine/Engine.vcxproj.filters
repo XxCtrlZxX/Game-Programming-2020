@@ -46,26 +46,14 @@
     <Filter Include="헤더 파일\Game\MainScene">
       <UniqueIdentifier>{c2408a16-0516-47e8-b433-881e78cafef9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\Game\GameScene">
-      <UniqueIdentifier>{173442aa-4d74-4d06-b605-e83bdddc4adb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\Game\GameScene\SceneObject">
-      <UniqueIdentifier>{95720661-b68e-4d6a-b039-40ebd4bd4b7a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Game\MainScene">
       <UniqueIdentifier>{ec7db3c2-d5b9-4d0a-8947-6ae9a1a3e58c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Game\GameScene">
-      <UniqueIdentifier>{2b954a99-2e0f-421d-914b-c28fd2da201f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Game\GameScene\SceneObject">
-      <UniqueIdentifier>{12e5f5a9-b9de-41f6-be50-61268a6cb2bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\Game\test">
-      <UniqueIdentifier>{39f2877e-f9e0-46b8-8ba9-c092c7cc1f44}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Game\MyGame">
+    <Filter Include="소스 파일\Game\MyGameScene">
       <UniqueIdentifier>{3e8d7884-f242-404f-8d00-ce3647b2a172}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game\MyGameScene">
+      <UniqueIdentifier>{39f2877e-f9e0-46b8-8ba9-c092c7cc1f44}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -108,29 +96,14 @@
     <ClCompile Include="MainScene.cpp">
       <Filter>소스 파일\Game\MainScene</Filter>
     </ClCompile>
-    <ClCompile Include="Bridge.cpp">
-      <Filter>소스 파일\Game\GameScene\SceneObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Background.cpp">
-      <Filter>소스 파일\Game\GameScene\SceneObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Number.cpp">
-      <Filter>소스 파일\Game\GameScene\SceneObject</Filter>
+    <ClCompile Include="MyGameScene.cpp">
+      <Filter>소스 파일\Game\MyGameScene</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>소스 파일\Game\GameScene\SceneObject</Filter>
+      <Filter>소스 파일\Game\MyGameScene</Filter>
     </ClCompile>
-    <ClCompile Include="GameScene.cpp">
-      <Filter>소스 파일\Game\GameScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Coin.cpp">
-      <Filter>소스 파일\Game\GameScene\SceneObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
-      <Filter>소스 파일\Game\GameScene\SceneObject</Filter>
-    </ClCompile>
-    <ClCompile Include="MyGameScene.cpp">
-      <Filter>소스 파일\Game\MyGame</Filter>
+    <ClCompile Include="Wall.cpp">
+      <Filter>소스 파일\Game\MyGameScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,29 +143,14 @@
     <ClInclude Include="MainScene.h">
       <Filter>헤더 파일\Game\MainScene</Filter>
     </ClInclude>
-    <ClInclude Include="Background.h">
-      <Filter>헤더 파일\Game\GameScene\SceneObject</Filter>
-    </ClInclude>
-    <ClInclude Include="Number.h">
-      <Filter>헤더 파일\Game\GameScene\SceneObject</Filter>
+    <ClInclude Include="MyGameScene.h">
+      <Filter>헤더 파일\Game\MyGameScene</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>헤더 파일\Game\GameScene\SceneObject</Filter>
+      <Filter>헤더 파일\Game\MyGameScene</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>헤더 파일\Game\GameScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Bridge.h">
-      <Filter>헤더 파일\Game\GameScene\SceneObject</Filter>
-    </ClInclude>
-    <ClInclude Include="Coin.h">
-      <Filter>헤더 파일\Game\GameScene\SceneObject</Filter>
-    </ClInclude>
-    <ClInclude Include="Obstacle.h">
-      <Filter>헤더 파일\Game\GameScene\SceneObject</Filter>
-    </ClInclude>
-    <ClInclude Include="MyGameScene.h">
-      <Filter>헤더 파일\Game\test</Filter>
+    <ClInclude Include="Wall.h">
+      <Filter>헤더 파일\Game\MyGameScene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

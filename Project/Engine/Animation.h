@@ -21,12 +21,11 @@ public :
 	~Animation();
 
 	void Render();
+	void Render(int tmp);
 	void Update(float dTime);
 
 	void AddFrame(const char* path);
 
 	int getWidth();
 	int getHeight();
-
-	Sprite* getSprite();
 };

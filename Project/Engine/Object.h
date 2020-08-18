@@ -58,6 +58,9 @@ public:
 	void setScale(SX scaleX, SY scaleY) {
 		scale.x = scaleX;
 		scale.y = scaleY;
+		// scale에 맞춰 충돌범위 수정
+		rect.left *= scaleX;
+		rect.bottom *= scaleY;
 	}
 
 	template<typename SCX, typename SCY>
