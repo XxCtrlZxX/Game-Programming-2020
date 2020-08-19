@@ -1,8 +1,10 @@
 #pragma once
+// vs2019 재배포 설치 파일
+// DirectX 9
 
 //프로그램 세팅
 #define CONSOLE_ON true
-#define SCREEN_WIDTH 768
+#define SCREEN_WIDTH 1024
 #define SCREEN_HEIGHT 768
 #define BG_COLOR D3DCOLOR_ARGB(255,255,255,255)
 #define PROGRAM_NAME TEXT("Engine")
@@ -44,7 +46,7 @@
 
 #define RUNNING_SPEED 500
 
-#define PI 3.141592653589793238
+#define PI 3.141592653589793
 #define debug(s) {std::cout << s << std::endl;}
 #define debug2(s1, s2) {std::cout << s1 << s2 << std::endl;}
 

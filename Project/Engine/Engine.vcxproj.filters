@@ -55,6 +55,18 @@
     <Filter Include="헤더 파일\Game\MyGameScene">
       <UniqueIdentifier>{39f2877e-f9e0-46b8-8ba9-c092c7cc1f44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Game\MyGameScene\Object">
+      <UniqueIdentifier>{d5265472-0f0a-481e-bffe-034faa6651a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game\MyGameScene\Object">
+      <UniqueIdentifier>{3f7b6ad0-28c5-4ca5-8727-e99b3def2bd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\EndScene">
+      <UniqueIdentifier>{9126051e-d420-4755-9f43-1d939c6c1f31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game\EndScene">
+      <UniqueIdentifier>{73287ab9-12b4-49cf-a7f8-667d4e1dd1a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -99,14 +111,26 @@
     <ClCompile Include="MyGameScene.cpp">
       <Filter>소스 파일\Game\MyGameScene</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>소스 파일\Game\MyGameScene\Object</Filter>
+    </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>소스 파일\Game\MyGameScene</Filter>
+      <Filter>소스 파일\Game\MyGameScene\Object</Filter>
     </ClCompile>
     <ClCompile Include="Wall.cpp">
-      <Filter>소스 파일\Game\MyGameScene</Filter>
+      <Filter>소스 파일\Game\MyGameScene\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>소스 파일\Game\MyGameScene</Filter>
+    <ClCompile Include="Coin.cpp">
+      <Filter>소스 파일\Game\MyGameScene\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Number.cpp">
+      <Filter>소스 파일\Game\MyGameScene\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>소스 파일\Game\MyGameScene\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="EndScene.cpp">
+      <Filter>소스 파일\Game\EndScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -149,14 +173,26 @@
     <ClInclude Include="MyGameScene.h">
       <Filter>헤더 파일\Game\MyGameScene</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>헤더 파일\Game\MyGameScene\Object</Filter>
+    </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>헤더 파일\Game\MyGameScene</Filter>
+      <Filter>헤더 파일\Game\MyGameScene\Object</Filter>
     </ClInclude>
     <ClInclude Include="Wall.h">
-      <Filter>헤더 파일\Game\MyGameScene</Filter>
+      <Filter>헤더 파일\Game\MyGameScene\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>헤더 파일\Game\MyGameScene</Filter>
+    <ClInclude Include="Number.h">
+      <Filter>헤더 파일\Game\MyGameScene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>헤더 파일\Game\MyGameScene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>헤더 파일\Game\MyGameScene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EndScene.h">
+      <Filter>헤더 파일\Game\EndScene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -45,5 +45,5 @@ void Player::PlayerJump(D3DXVECTOR2 jVec, float power) {
 }
 
 D3DXVECTOR2 Player::getPosCenter() {
-	return D3DXVECTOR2(getPosX() + playerAnimation->getWidth() / 2, getPosY() + playerAnimation->getHeight() / 2 - 50);
+	return D3DXVECTOR2(getPosX() + playerAnimation->getWidth() / 2 - 15, getPosY() + playerAnimation->getHeight() / 2 - 50);
 }
