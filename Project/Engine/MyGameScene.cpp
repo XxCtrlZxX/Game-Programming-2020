@@ -7,7 +7,7 @@ MyGameScene::MyGameScene() {
 	isLBtnDown = false;
 	isLBtnUp = false;
 
-	mainCamera = new Camera();
+	cameraPos = cameraVector = D3DXVECTOR2(0, 0);
 
 	//-------------------------------------------//
 	player = new Player();
@@ -51,24 +51,24 @@ void MyGameScene::Render() {
 void MyGameScene::Update(float dTime) {
 	Scene::Update(dTime);
 
-	mainCamera->CameraMove(10, 0);
-
 	CollisionCheck();
-
-	if (inputManager->GetKeyState(VK_SPACE) == KEY_DOWN) {
-		
-	}
+	CameraDiff();
+	CameraMove(cameraVector.x, cameraVector.y);
 
 	if (jumpCount < 2) {
 		MouseManage();
 	}
-	
+	if (player->getPosY() > SCREEN_HEIGHT) {
+		sceneManager->ChangeScene(new MainScene);
+	}
+
+	// TODO: Coin 생성, 충돌, 점수-> 메인화면에 보여주기
 }
 
 void MyGameScene::CollisionCheck() {
 	for (auto iter = wallList.begin(); iter != wallList.end(); iter++) {
 		if (player->IsCollisionRect((*iter)) && !player->isGround) {
-			debug("collide");
+			//debug("collide");
 			player->isGround = true;
 			jumpCount = 0;
 		}
@@ -115,12 +115,29 @@ void MyGameScene::MouseManage() {
 	}
 }
 
+void MyGameScene::CameraDiff() {
+	/*if (player->getPosX() > 600) {
+		cameraVector.x = 1;
+	}
+	else if (player->getPosX() < 100) {
+		cameraVector.x = -1;
+	}
+	else
+		cameraVector.x = 0;*/
+
+	cameraVector.x = Lerp(cameraPos.x, player->getPosX(), 0.5);
+}
+
 void MyGameScene::CameraMove(D3DXVECTOR2 vec) {
-	CameraMove(vec.x, vec.y);
+	cameraPos += vec * globalTime;
+	for (auto& wall : wallList) {
+		wall->setPos(wall->getPos() + vec * globalTime);
+	}
+	player->setPos(player->getPos() + vec * globalTime);
 }
 
 void MyGameScene::CameraMove(float dx, float dy) {
-
+	CameraMove(D3DXVECTOR2(-dx, dy));
 }
 
 float MyGameScene::VecDistance(D3DXVECTOR2 vec) {
@@ -129,4 +146,8 @@ float MyGameScene::VecDistance(D3DXVECTOR2 vec) {
 
 float MyGameScene::VecAngle(D3DXVECTOR2 vec) {
 	return -atan2(vec.x, vec.y);
+}
+
+float MyGameScene::Lerp(float p1, float p2, float d1) {
+	return (1 - d1) * p1 + d1 * p2;
 }

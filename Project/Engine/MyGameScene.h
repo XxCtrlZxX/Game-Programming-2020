@@ -10,7 +10,6 @@
 // 오브젝트 헤더
 #include "Player.h"
 #include "Wall.h"
-#include "Camera.h"
 
 class MyGameScene : public Scene
 {
@@ -23,10 +22,8 @@ private:
 	bool isLBtnDown, isLBtnUp;
 	int jumpCount;
 
-	D3DXVECTOR2 firstMousePos, currentMousePos;
-	D3DXVECTOR2 arrowVector;
-
-	Camera* mainCamera;
+	D3DXVECTOR2 firstMousePos, currentMousePos, cameraPos;
+	D3DXVECTOR2 arrowVector, cameraVector;
 
 public:
 	MyGameScene();
@@ -37,11 +34,13 @@ public:
 
 	void CollisionCheck();
 	void MouseManage();
-
+	
+	void CameraDiff();
 	void CameraMove(D3DXVECTOR2 vec);
 	void CameraMove(float dx, float dy);
 
 	float VecDistance(D3DXVECTOR2 vec);
 	float VecAngle(D3DXVECTOR2 vec);
+	float Lerp(float p1, float p2, float d1);
 };
 

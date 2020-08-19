@@ -46,6 +46,7 @@
 
 #define PI 3.141592653589793238
 #define debug(s) {std::cout << s << std::endl;}
+#define debug2(s1, s2) {std::cout << s1 << s2 << std::endl;}
 
 //전역 변수
 extern LPDIRECT3D9 pd3d;

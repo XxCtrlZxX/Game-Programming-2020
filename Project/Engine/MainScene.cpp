@@ -4,19 +4,21 @@
 MainScene::MainScene() {
 	background = new Sprite("Resources/Image/Background.png");
 	AddObject(background);
-	background->setPos(0, 0);
+	background->setPos(SCREEN_WIDTH / 2 - background->getWidth() / 2, 0);
 
 	title = new Sprite("Resources/Image/mainname.png");
 	AddObject(title);
-	title->setPos(275, 0);
+	title->setPos(SCREEN_WIDTH / 2 - title->getWidth() / 2, 0);
 
 	startButton = new Sprite("Resources/Image/in.png");
+	startButton->setScale(0.7, 0.7);
 	AddObject(startButton);
-	startButton->setPos(SCREEN_WIDTH / 2 - startButton->getWidth() / 2, 350);
+	startButton->setPos(SCREEN_WIDTH / 2 - startButton->getWidth() * 0.7 / 2, 350);
 
 	exitButton = new Sprite("Resources/Image/out.png");
+	exitButton->setScale(0.7, 0.7);
 	AddObject(exitButton);
-	exitButton->setPos(SCREEN_WIDTH / 2 - exitButton->getWidth() / 2, 500);
+	exitButton->setPos(SCREEN_WIDTH / 2 - exitButton->getWidth() * 0.7 / 2, 500);
 
 	//soundManager->LoadWave("Resources/Sound/MusicSurround.wav", "Background");
 	//soundManager->Play("Background", true);
